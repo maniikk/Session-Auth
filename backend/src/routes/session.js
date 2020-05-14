@@ -2,7 +2,7 @@ import express from 'express'
 import Joi from '@hapi/joi'
 import User from '../models/user'
 import {signIn} from '../validations/user'
-import {SESS_NAME} from '../config'
+import {SESS_NAME} from '../../config'
 import {parseError, sessionizeUser} from '../utils/helper'
 import { compareSync } from 'bcryptjs'
 

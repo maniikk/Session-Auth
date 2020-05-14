@@ -3,9 +3,8 @@ import express from 'express'
 import mongoose from 'mongoose'
 import connectStore from 'connect-mongo'
 import session from 'express-session'
-import {PORT, NODE_ENV, MONGO_URI, MONGO_URI_LOCAL, SESS_NAME, SESS_SECRET, SESS_LIFETIME} from './config'
+import {PORT, NODE_ENV, MONGO_URI_LOCAL, SESS_NAME, SESS_SECRET, SESS_LIFETIME} from '../config'
 import {userRouter, sessionRouter} from './routes'
-import { sessionizeUser } from './utils/helper'
 (async ()=> {
     try{
         await mongoose.connect(MONGO_URI_LOCAL,{useNewUrlParser:true, useUnifiedTopology: true})
