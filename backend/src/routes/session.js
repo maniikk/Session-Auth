@@ -45,6 +45,11 @@ sessionRouter.delete("", ({session}, res) => {
 });
 
 sessionRouter.get("", ({session: {user}}, res) => {
-    res.send(user)
+    if(user) {
+        res.send({user});
+    }
+    else {
+        res.status(204).send();
+    }
 });
 export default sessionRouter;
